@@ -50,7 +50,14 @@ class MainActivity : AppCompatActivity() {
             szer.progress = (szerb1.progress + szerb2.progress + szer3.progress ) / 3
         }
 
+        szerb1.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                zdj.scaleX = progress.toFloat() / 100f
+                szerokosci()
+            }
 
-
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
     }
 }
