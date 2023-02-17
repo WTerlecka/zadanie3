@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             wys.progress = (wysb1.progress + wysb2.progress + wysb3.progress ) / 3
         }
         fun szerokosci() {
-            szer.progress = (szerb1.progress + szerb2.progress + szer3.progress ) / 3
+            szer.progress = (szerb1.progress + szerb2.progress + szerb3.progress ) / 3
         }
 
         szerb1.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -68,6 +68,45 @@ class MainActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
+
+        szerb2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                zdj2.scaleX = progress.toFloat() / 100f
+                szerokosci()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+        wysb2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                zdj2.scaleY = progress.toFloat() / 100f
+                wysokosci()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        szerb3.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                zdj3.scaleX = progress.toFloat() / 100f
+                szerokosci()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+        wysb3.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                zdj3.scaleY = progress.toFloat() / 100f
+                wysokosci()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
 
 
     }
